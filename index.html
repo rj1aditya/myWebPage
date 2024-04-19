@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head id="head">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Jain- Dev and System Designer</title>
+    <script src="resources/main.js"></script>
+    <link rel="stylesheet" href="resources/main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body id="body">
+    <header class="h1">
+        <div id="menu">
+            <div class="g1" id="firstname"><a href="#">Aditya</a></div>
+            <div class="g1" id="lastname"><a href="#">Jain</a></div>
+            <div id="burger-menu" class="g4">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <div id="hidden-menu">
+                <a class="g2" id="home" href="index.html">Home</a>
+                <a class="g2" id="blogs" href="resources/blogs.html">Blogs</a>
+                <a class="g2" id="APIs" href="resources/api.html">API</a>
+                <a class="g2" id="project" href="resources/projects.html">Projects</a>
+                <a class="g2" id="login" href="#">Login</a>
+                <a class="g2" id="contact" href="#footer">Contact Us</a>
+                <a class="g2" id="about" href="#main">About</a>
+                <span id="separator" style="color:lightgray">|</span>
+                <!-- LinkedIn Logo -->
+                <a class="g3" id="linkedin" href="https://www.linkedin.com/in/aditya-j-895ab3163/" target="_blank">
+                    <div class="icon-container">
+                        <img src="resources/linkedin-logo.png" alt="LinkedIn Logo" width="24" height="20">
+                    </div>
+
+                </a>
+
+                <!-- GitHub Logo -->
+                <a class="g3" id="github" href="https://github.com/rj1aditya" target="_blank">
+                    <div class="icon-container">
+                        <img src="resources/github-mark.png" alt="GitHub Logo" width="24" height="24">
+                    </div>
+                </a>
+
+                <!-- YouTube Logo -->
+                <a class="g3" id="youtube" href="https://www.youtube.com/channel/UCGRwK319lkL56ovKOpfl2Bg"
+                    target="_blank">
+                    <div class="icon-container"><img src="resources/youtube-logo.png" alt="YouTube Logo" width="24"
+                            height="16"></div>
+                </a>
+            </div>
+        </div>
+    </header>
+    <main id="main">
+        <div class="main1">
+            <div id="main-content">
+                <h2 class="m1" id="welcome">
+                    <div style="background-color:green; width:20px; height:2px; margin-right: 5px;"></div>Hello
+                </h2>
+                <h1 class="m1" id="name">I'm Aditya Jain</h1>
+                <p class="m1" id="intro1">Full Stack Developer and consultant</p>
+                <div class="m1" id="intro2">
+                    <p>
+                        Experienced Developer and System Designer with 7+ years in crafting innovative digital
+                        solutions. Passionate about problem-solving and skilled in creating seamless user experiences
+                        and robust systems.
+                    </p>
+                    <h2>What I Do:</h2>
+                    <ul>
+                        <li>🚀 <strong>Web Development:</strong> Crafting websites and web applications that blend
+                            creativity with functionality.</li>
+                        <li>🔒 <strong>System Design:</strong> Architecting scalable and efficient systems for optimal
+                            performance.</li>
+                        <li>📝 <strong>Blogging:</strong> Sharing insights and knowledge on tech trends, best practices,
+                            and
+                            more.</li>
+                        <li>💡 <strong>API Development:</strong> Building the bridges that enable different software
+                            components to communicate.</li>
+                        <li>🌐 <strong>Project Management:</strong> Overseeing projects from concept to completion,
+                            ensuring
+                            they meet and exceed expectations.</li>
+                    </ul>
+
+                </div>
+            </div>
+            <div class="image-container">
+                <img class="img-box" src="resources/aditya.jpg" alt="Aditya's Image">
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <div id="upper-bottom">
+            <div id="contact-info">
+                <div class="f1-tag">Connect with me</div>
+                <div class="f1"><i class="material-icons" style="color:green">place</i> Bengaluru, Bharat</div>
+                <!-- <i> tags are often used for icons and other inline elements.
+                    The "material-icons" class is used to apply the Material Icons font to the content inside the <i> tag.
+                    The text inside the <i> tag, in this case, "place," corresponds to the name of the icon you want to display. "place" represents the location icon. -->
+                <div class="f1"><i class="material-icons" style="color:green">mail</i> <a href="mailto:aditya.khurai@gmail.com" alt="send-email">aditya.khurai@gmail.com</a></div>
+            </div>
+            <div id="contact-form">
+                <div class="f2-tag">Contact me</div>
+                <div>
+                    <form action="server/send-email" id="contact-me-form" method="post">
+                        <!-- Text Input with Placeholder -->
+                        <input type="text" id="Username" name="name" placeholder="Name" required>
+
+                        <!-- Email Input with Placeholder -->
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+
+                        <!-- Textarea for Message with Placeholder -->
+                        <textarea id="message" name="message" rows="4" placeholder="Message" required></textarea>
+
+                        <!-- Submit Button -->
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="bottom">
+            &copy;Copyright 2024 - Developer by Aditya Jain, All right Reserved.
+        </div>
+        <!-- Add this element to your HTML -->
+        <div id="response-message"></div>
+    </footer>
+</body>
+
+</html>

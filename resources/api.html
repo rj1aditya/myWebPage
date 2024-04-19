@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add any additional styles you want inline here */
+
+        body {
+            background-color: #1e3c72;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .home a{
+            position: absolute;
+            top:10px;
+            left: 10px;
+            color: darkgray;
+        }
+        .container {
+            text-align: center;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        #countdown {
+            font-size: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        #countdown span {
+            margin: 0 10px;
+            background-color: #1e3c72;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        /* Add animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Apply animation to elements */
+        .animated {
+            animation: fadeIn 2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="home"><a href="../index.html">home</a></div>
+    <div class="container animated">
+        <h1>Coming Soon</h1>
+        <p>We're working on something awesome!</p>
+        <div id="countdown">
+            <span id="days">00</span>
+            <span>:</span>
+            <span id="hours">00</span>
+            <span>:</span>
+            <span id="minutes">00</span>
+            <span>:</span>
+            <span id="seconds">00</span>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for countdown timer
+        const countdownDate = new Date('2023-12-31T00:00:00').getTime();
+
+        const countdown = () => {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+
+            if (distance <= 0) {
+                clearInterval(interval);
+                document.getElementById('countdown').textContent = 'EXPIRED';
+            }
+        };
+
+        countdown();
+        const interval = setInterval(countdown, 1000);
+    </script>
+</body>
+</html>

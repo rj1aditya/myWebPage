@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    text-decoration: none;
+    list-style: none;
+    font-family: "Quicksand", sans-serif;
+}
+
+body {
+    /* background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-image: linear-gradient(to top, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%);
+    background-image: linear-gradient(to top, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%);
+    background-image: linear-gradient(to top, #09203f 0%, #537895 100%); 
+    background: linear-gradient( #1e3c72 0%, #1e3c72 1%, #2a5298 100%); */
+    font-family: sans-serif;
+    background-color: #1e3c72;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* This ensures the body stretches to at least the viewport height. */
+}
+
+.h1{
+    display: flex;
+    position: relative;
+}
+
+#menu {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    padding-top: 10px;
+    width: 100%;
+    z-index: 1000;
+    background-color: #1e3c72;
+}
+
+/* give double size to the name */
+#menu .g1 {
+    font-size: 2em;
+}
+
+/* give space between 1st and last name */
+#menu .g1:first-child{
+    padding-left: 40px;
+    padding-right: 0.25em;
+}
+
+/* Style the firstName first letter 'A' */
+#menu .g1#firstname::first-letter {
+    color: green;
+}
+
+/* Style the lastName first letter 'J' */
+#menu .g1#lastname::first-letter {
+    color: green;
+}
+
+/* keep Name on the left side of the page and rest element right side */
+#menu .g1#lastname {
+    margin-right: auto;
+}
+
+#hidden-menu>a {
+    color: darkgray;
+    font-size: 1em;
+    padding: 0.5em;
+    margin-right: 0.5em;
+}
+
+.icon-container{
+    display: inline-block;
+}
+
+#hidden-menu .g3:hover .icon-container{
+    transform: scale(1.2); 
+}
+
+#hidden-menu a.g2:hover{
+    color:green;
+    transform: scale(1.2);
+    font-weight: bold;
+}
+
+
+
+#separator{
+    font-size: 1.5em;
+}
+
+
+/* Style the burger menu icon */
+#burger-menu {
+    display: none; /* Initially hidden on larger screens */
+    cursor: pointer;
+    padding: 1em;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+}
+
+
+/* CSS for screens with a maximum width of 768px (typical for mobile devices) */
+@media (max-width: 768px) {
+    #menu .g1 {
+        font-size: 1.5em; /* Reduce the font size for the name on mobile screens */
+    }
+
+    #burger-menu {
+        display: block;
+    }
+
+    #hidden-menu{
+        display: none;
+    }
+
+    #hidden-menu.show {
+        display: flex;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.7);
+        flex-direction: column;
+        justify-content: center;
+        top: 3.5em;
+        position: absolute;
+        right: 0;
+        z-index: 1000;
+    }
+}
+/* Media query for responsiveness */
+@media (max-width: 900px) {
+    #hidden-menu .g3{
+        display: none;
+    }
+}
+
+#github img, #github-link img {
+    filter: invert(100%);
+}
+
+main {
+    flex-grow: 1; /* This allows the main content to grow and push the footer to the bottom. */
+    padding-top: 6em;
+    margin-top: 50px;
+}
+
+footer {
+    text-align: center;
+    color: white;
+    display: grid;
+}
+
+footer #bottom {
+    border-top: 1.5px solid #142b4f; /* Change the border color to a darker shade of blue */
+    padding-top: 5px; /* Add some spacing between the border and content */
+    color: white; /* Text color for the content */
+    text-align: center; /* Center the content horizontally */
+    font-size: 0.8em;
+}
+
+footer #upper-bottom{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: 400px;
+    text-align: left;
+}
+
+#contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* border: 2px solid black; */
+    padding-left: 40px;
+    padding-top: 40px;
+}
+
+#contact-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* border: 2px solid black; */
+    padding-left: 40px;
+    padding-top: 40px;
+    color: green;
+}
+
+div .material-icons{
+    font-size: 1.75em;
+}
+
+.f1{
+    font-size: 0.75em;
+    color: white;
+    font-weight: normal;
+    line-height: 30px;
+    padding-left: 10px;
+}
+
+.f1 a{
+    color: white;
+    padding-top: 0px;
+}
+
+.f1-tag, .f2-tag{
+    font-weight: 900;
+    font-size: 1.5em;
+    height: 75px;
+}
+.f1 a:hover{
+    font-size: 1.2em;
+}
+
+.f2-tag{
+    color: green;
+}
+
+
+#contact-me-form input[type="text"],
+#contact-me-form input[type="email"],
+#contact-me-form textarea,
+#contact-me-form button[type="submit"] {
+    width: 80%;
+    box-sizing: border-box;
+    padding: 10px; /* Add padding for better spacing */
+    margin-bottom: 5px; /* Add margin between input fields */
+    background-color: #092251;
+    border: none;
+    margin-left: 10px;
+}
+
+#contact-me-form textarea {
+    resize: vertical; /* Allow vertical resizing for the textarea */
+}
+
+#contact-me-form button[type="submit"] {
+    background-color: green; /* Customize the button background color */
+    color: white; /* Customize the button text color */
+    padding: 10px 20px; /* Add padding to the button */
+    border: none;
+    cursor: pointer;
+}
+
+/* Base styles for your main content */
+.main {
+    display: flex;
+    flex-direction: row-reverse; /* Image on the right side */
+    justify-content: space-between; /* Create space between content and image */
+    align-items: center; /* Vertically center content and image */
+}
+
+.main1{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+#main-content{
+    margin-left: 40px;
+}
+
+
+#main-content #welcome{
+    color: green;
+    font-size: 17.75px;
+    font-family: "quicksand", sans-serif;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#main-content #name{
+    color: white;
+    font-size: 30px;
+    font-family: "quicksand", sans-serif;
+    margin: 16px 0px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#main-content #intro1{
+    color: white;
+    font-size: 16px;
+    font-family: "quicksand", sans-serif;
+    margin: 0px 0px 24px;
+}
+#intro2{
+    margin-bottom: 150px;
+}
+#intro2 p, li, strong{
+    color: white;
+}
+#intro2 h2{
+    color: green;
+    font-weight: bold;
+    margin: 20px 0px 10px 0px;
+}
+
+.image-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.img-box {
+    width: 25em; /* Make the image responsive to its container */
+    height: 25em;
+    border-radius: 50%; /* Make the image circular */
+    margin: 10px;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    main {
+        flex-grow: 1; /* This allows the main content to grow and push the footer to the bottom. */
+        padding-top: 3em;
+        margin-top: 25px;
+        
+    }
+    
+    .main1{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .image-container{
+        order: -1;
+    }
+
+    .img-box {
+        width: 20em; /* Make the image responsive to its container */
+        height: 20em;
+        border-radius: 50%; /* Make the image circular */
+        margin: 10px;
+        height: auto;
+    }
+    
+    #main-content{
+        padding: 14px;
+        height: auto;
+    }
+
+    footer #upper-bottom {
+        display: flex;
+        flex-direction: column; /* Change to a column layout */
+        justify-content: center;
+        align-items: flex-start; /* Align items to the left */
+        height: auto; /* Remove the fixed height */
+    }
+}
