@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Buy and Sell Stocks With Transaction Fee</title>
+    <title>Coin Change 2</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css"
@@ -50,7 +50,7 @@
     <div class="header">
       <div class="header-content">
         <!-- <h1>Data Structure Algorithm</h1>-->
-        <h2>Buy and Sell Stocks With Transaction Fee</h2>
+        <h2>Coin Change 2</h2>
       </div>
     </div>
     <div class="container">
@@ -59,14 +59,65 @@
         <pre><code class="language-cpp line-numbers">
 // C++ solution code goes here
 
+// C++ solution code goes here
+#include &lt;bits/stdc++.h&gt; 
+//Recursion
+long func1(int *num, vector&lt;vector&lt;long&gt;&gt; &dp, int i, int target)
+{
+    if(i == 0)
+    {
+        return target%num[0]==0;
+    }
+
+    if(dp[i][target] != -1)
+        return dp[i][target];
+
+    long ways = func1(num, dp, i-1, target);
+
+    if(num[i] &lt;= target)
+        ways +=func1(num, dp, i, target-num[i]);
+
+    dp[i][target] = ways;
+}
+
+//Recursion -- &gt; tabulation
+long func2(int *num, int n, int target)
+{
+    vector&lt;vector&lt;long&gt;&gt; dp(n, vector&lt;long&gt;(target+1, 0));
+
+    for(int tar = 0; tar &lt;= target; tar++)
+    {
+        dp[0][tar] = (tar%num[0] == 0);
+    }
+    
+    for(int i = 1; i &lt; n; i++)
+    {
+        for(int tar = 0; tar &lt;= target; tar++)
+        {
+            long way = dp[i-1][tar];
+            if(num[i] &lt;= tar)
+                way += dp[i][tar-num[i]];
+
+            dp[i][tar] = way;
+        }
+    }
+
+    return dp[n-1][target];
+}
+
+
+long countWaysToMakeChange(int *num, int n, int x)
+{
+    // Write your code here
+    vector&lt;vector&lt;long&gt;&gt; dp(n, vector&lt;long&gt;(x+1, -1));
+
+    //Recursion
+    //return func1(num, dp, n-1, x);
+
+    //Tabulation
+    return func2(num, n, x);
+}
         </code></pre>
-        <!-- <img
-          src="images/"
-          alt="Longest Common Subsequence Image"
-          width="700"
-          height="450"
-          style="display: block; margin: 0 auto"
-        /> -->
       </div>
 
       <h2>Java Solution</h2>

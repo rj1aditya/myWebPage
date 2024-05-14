@@ -140,6 +140,162 @@ document.addEventListener("DOMContentLoaded", function () {
       solution: "DP_solution/MinimumCoins.html",
       nt: [""],
     },
+    {
+      title: "Target Sum",
+      description: ["https://bit.ly/3swy5uL"],
+      solution: "DP_solution/targetSum.html",
+      nt: [
+        "this question is exact similar to Question 18: Count Partitions With Given Difference. In this question just changed the language.",
+      ],
+    },
+    {
+      title: "Coin Change 2",
+      description: ["https://bit.ly/33Kd8o2"],
+      solution: "DP_solution/coinChange2.html",
+      nt: [""],
+    },
+    {
+      title: "Unbounded Knapsack",
+      description: ["https://bit.ly/3IvPdXS"],
+      solution: "DP_solution/unboundedKnapsack.html",
+      nt: [""],
+    },
+    {
+      title: "Rod Cutting Problem",
+      description: ["https://bit.ly/3H10kYJ"],
+      solution: "DP_solution/RodCuttingProblem.html",
+      nt: [""],
+    },
+    {
+      title: "Longest Common Subsequence",
+      description: ["https://bit.ly/3pvkqUd"],
+      solution: "DP_solution/LongestCommonSubsequence.html",
+      nt: [
+        "In this code we done right shift of the index.. Read the code for reason or else check its video",
+      ],
+    },
+    {
+      title: "Print Longest Common Subsequence",
+      description: [
+        "https://www.naukri.com/code360/problems/print-longest-common-subsequence_8416383",
+      ],
+      solution: "DP_solution/PrintLongestCommonSubsequence.html",
+      nt: [
+        "1st we make the dp matrix then in matrix if we look the last index dp[n][m] there we will get the max lenght of the ans. Now we have to make string. So we backtrace the matrix from the last index and make the longest common subsequence string.",
+      ],
+    },
+    {
+      title: "Longest Common Substring ",
+      description: ["https://bit.ly/3H2M3KS"],
+      solution: "DP_solution/longestCommonSubscript.html",
+      nt: [""],
+    },
+    {
+      title: "Longest Palindromic Subsequence",
+      description: [
+        "https://www.naukri.com/code360/problems/longest-palindromic-subsequence_842787?leftPanelTabValue=PROBLEM",
+      ],
+      solution: "DP_solution/longestPalindromicSubsequence.html",
+      nt: [
+        "In this question has given only 1 string. For which we have to find out the longest palindromic subsequence. For a solution we make another string by just making reverse of the given string and treted this question similar as LONGEST COMMON SUBSEQUENCE. Go to the video if not understood.",
+      ],
+    },
+    {
+      title: "Minimum insertions to make a string palindrome",
+      description: ["https://bit.ly/3H2ZtGP"],
+      solution: "DP_solution/MinInsertToMakeStrPalindrome.html",
+      nt: [
+        "This question is similar to - Question 28: Longest Palindromic Subsequence. With small addition like str.length - longestPalindromicSubsequence",
+      ],
+    },
+    {
+      title: "Minimum Insertions/Deletions to Convert String A to String B",
+      description: ["https://bit.ly/3pya8CP"],
+      solution: "DP_solution/MinInsert_DeletionToMakeStr1toStr2.html",
+      nt: [
+        "This question is similar to - Question 28: Longest Palindromic Subsequence. With small addition like:",
+        "for deletion of char str1.length - longestPalindromicSubsequence",
+        "for addition of char str2.length - longestPalindromicSubsequence",
+      ],
+    },
+    {
+      title: "Shortest Common Supersequence",
+      description: ["https://bit.ly/3vEYKce"],
+      solution: "DP_solution/ShortestCommonSupersequence.html",
+      nt: [
+        "This problem is similar to Question 26: Print Longest Common Subsequence, with small addition to form a super string. Check the image in the solution page.",
+      ],
+    },
+
+    {
+      title: "Distinct Subsequences",
+      description: ["https://bit.ly/3nZNxy7"],
+      solution: "DP_solution/DistinctSubsequences.html",
+      nt: [""],
+    },
+    {
+      title: "Edit Distance",
+      description: ["https://bit.ly/3HcTJdy"],
+      solution: "DP_solution/EditDistance.html",
+      nt: [""],
+    },
+    {
+      title: "Wildcard Matching",
+      description: ["https://bit.ly/3vEYKce"],
+      solution: "DP_solution/WildcardMatching.html",
+      nt: [""],
+    },
+    {
+      title: "Best Time to Buy and Sell Stock",
+      description: ["https://bit.ly/3rN7GIL"],
+      solution: "DP_solution/BestTimetoBuy_SellStock.html",
+      nt: [""],
+    },
+    {
+      title: "Buy and Sell Stock - II",
+      description: ["https://bit.ly/3nYO17H"],
+      solution: "DP_solution/BuyAndSell2.html",
+      nt: [""],
+    },
+
+    {
+      title: "Buy and Sell Stock - III",
+      description: ["https://bit.ly/3rLHkqQ"],
+      solution: "DP_solution/BuyAndSell3.html",
+      nt: [""],
+    },
+    {
+      title: "Buy and Sell Stock - IV",
+      description: ["https://bit.ly/346R72e"],
+      solution: "DP_solution/BuyAndSell4.html",
+      nt: ["This question is solved using total no of transaction as well"],
+    },
+    {
+      title: "Buy and Sell Stocks With Cooldown",
+      description: ["https://bit.ly/3tZsYWA"],
+      solution: "DP_solution/BuyAndSellWithCooldown.html",
+      nt: [""],
+    },
+    {
+      title: "Buy and Sell Stocks With Transaction Fee",
+      description: ["https://bit.ly/3nZucNH"],
+      solution: "DP_solution/BuyAndSellWithFee.html",
+      nt: ["Similar to Buy and Sell Stock - II, only fee added here"],
+    },
+    {
+      title: "Longest Increasing Subsequence",
+      description: ["https://bit.ly/3rVoIoq"],
+      solution: "DP_solution/LongestIncresSubsequence.html",
+      nt: [
+        "All test cases not solved, TLE coming since TC of all solution given is n^2",
+      ],
+    },
+    {
+      title: "( @ @ ) Printing Longest Increasing Subsequence",
+      description: ["https://bit.ly/3nYO17H"],
+      solution: "DP_solution/PrintLongestIncresSubsequence.html",
+      nt: ["This is tricky problem, first try to solve it on white board..."],
+    },
     // Add more question objects here
   ];
   {
