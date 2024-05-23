@@ -296,6 +296,95 @@ document.addEventListener("DOMContentLoaded", function () {
       solution: "DP_solution/PrintLongestIncresSubsequence.html",
       nt: ["This is tricky problem, first try to solve it on white board..."],
     },
+    {
+      title: "Largest Divisible Subset",
+      description: ["https://bit.ly/3rON1Ef"],
+      solution: "DP_solution/PrintLargestDivisibleSubset.html",
+      nt: [""],
+    },
+    {
+      title: "Longest String Chain",
+      description: ["https://bit.ly/3KHsl9J"],
+      solution: "DP_solution/LongestStringChain.html",
+      nt: [
+        "This is almost similar to LIS problem, but you have to match is with Tabulation method. To understand this problem check the image and notes on this mention on solution page.",
+      ],
+    },
+    {
+      title: "Longest Bitonic Subsequence",
+      description: ["https://bit.ly/3r4o1JB"],
+      solution: "DP_solution/LongestBitonicSubsequence.html",
+      nt: [
+        "What is bitonic? first increasing then decresing sequence is called the bitonic.",
+        "this will be solve like first we calculate the LIS from left then right, then add the dp1[i]+dp2[i]-1 where i:0-->n-1. Check its image in solution",
+      ],
+    },
+    {
+      title: "** Number of Longest Increasing Subsequence",
+      description: ["https://bit.ly/3fTRGiz"],
+      solution: "DP_solution/NumberofLongestIncreasingSubsequence.html",
+      nt: [""],
+    },
+    {
+      title: "------Partition DP---------",
+      description: ["How to solve the partition DP check img in solution"],
+      solution: "DP_solution/partitionDP.html",
+      nt: [""],
+    },
+    {
+      title: "🔥 Matrix Chain Multiplication",
+      description: ["https://bit.ly/3nXqfce"],
+      solution: "DP_solution/MatrixChainMultiplication.html",
+      nt: [""],
+    },
+    {
+      title: "(@ @) Minimum Cost to Cut the Stick",
+      description: ["https://bit.ly/3rWLMnC"],
+      solution: "DP_solution/MinCostToCutStick.html",
+      nt: [""],
+    },
+    {
+      title: "Burst Balloons",
+      description: ["https://bit.ly/3Kgck9N"],
+      solution: "DP_solution/BurstBalloons.html",
+      nt: [""],
+    },
+    {
+      title: "Evaluate Boolean Expression to True | Partition DP",
+      description: ["https://bit.ly/32tAMUW	"],
+      solution: "DP_solution/EvaluateBooleanExprToTrue.html",
+      nt: [
+        "https://takeuforward.org/data-structure/evaluate-boolean-expression-to-true-partition-dp-dp-52/",
+      ],
+    },
+    {
+      title: "Palindrome Partitioning - II ",
+      description: ["https://bit.ly/3jNRzqX"],
+      solution: "DP_solution/PalindromePartitioning2.html",
+      nt: [""],
+    },
+    {
+      title: "Partition Array for Maximum Sum",
+      description: [
+        "https://www.naukri.com/code360/problems/partition-array-for-maximum-sum_3755255",
+      ],
+      solution: "DP_solution/PartitionArrforMaxSum.html",
+      nt: [""],
+    },
+    {
+      title: "Maximum Rectangle Area with all 1's",
+      description: ["https://bit.ly/33HFz61"],
+      solution: "DP_solution/pending.html",
+      nt: [
+        "We will solve this problem when we will learn stack and queue DSA, in max area of rectangle from histogram problem this question come.",
+      ],
+    },
+    {
+      title: "Count Square Submatrices with All Ones",
+      description: ["https://bit.ly/3tYAUY7"],
+      solution: "DP_solution/CountSquareInMatrix.html",
+      nt: [""],
+    },
     // Add more question objects here
   ];
   {
