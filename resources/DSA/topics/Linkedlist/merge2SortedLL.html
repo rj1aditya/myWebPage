@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ffffffff</title>
+    <title>Merge two sorted Linked Lists</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css"
@@ -50,7 +50,7 @@
     <div class="header">
       <div class="header-content">
         <!-- <h1>Data Structure Algorithm</h1>-->
-        <h2>ffffff</h2>
+        <h2>Merge two sorted Linked Lists</h2>
       </div>
     </div>
     <div class="container">
@@ -58,6 +58,68 @@
       <div class="codeC">
         <pre><code class="language-cpp line-numbers">
 // C++ solution code goes here
+#include &lt;bits/stdc++.h&gt;
+
+/************************************************************
+
+    Following is the linked list node structure.
+    
+    template &lt;typename T&gt;
+    class Node {
+        public:
+        T data;
+        Node* next;
+
+        Node(T data) {
+            next = NULL;
+            this-&gt;data = data;
+        }
+
+        ~Node() {
+            if (next != NULL) {
+                delete next;
+            }
+        }
+    };
+
+************************************************************/
+
+Node&lt;int&gt;* sortTwoLists(Node&lt;int&gt;* first, Node&lt;int&gt;* second)
+{
+    // Write your code here.
+    Node&lt;int&gt; *dummy = new Node(-1);
+    Node&lt;int&gt; *temp = dummy;
+
+    while(first && second)
+    {
+        if(first-&gt;data &lt; second-&gt;data)
+        {
+            temp-&gt;next = first;
+            first = first-&gt;next;
+        }
+        else{
+            temp-&gt;next = second;
+            second = second-&gt;next;
+        }
+        temp = temp-&gt;next;
+    }
+
+    while(first)
+    {
+        temp-&gt;next = first;
+        first = first-&gt;next;
+        temp = temp-&gt;next;
+    }
+    while(second)
+    {
+
+        temp-&gt;next = second;
+        second = second-&gt;next;
+        temp = temp-&gt;next;
+    }
+
+    return dummy-&gt;next;
+}
 
         </code></pre>
         <!-- <img

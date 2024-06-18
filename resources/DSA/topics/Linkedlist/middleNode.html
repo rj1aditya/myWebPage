@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ffffffff</title>
+    <title>Middle element of LL</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css"
@@ -50,7 +50,7 @@
     <div class="header">
       <div class="header-content">
         <!-- <h1>Data Structure Algorithm</h1>-->
-        <h2>ffffff</h2>
+        <h2>Middle element of LL</h2>
       </div>
     </div>
     <div class="container">
@@ -58,7 +58,46 @@
       <div class="codeC">
         <pre><code class="language-cpp line-numbers">
 // C++ solution code goes here
+/*
+Following is the class structure of the Node class:
 
+class Node
+{
+public:
+    int data;
+    Node *next;
+    Node()
+    {
+        this-&gt;data = 0;
+        next = NULL;
+    }
+    Node(int data)
+    {
+        this-&gt;data = data; 
+        this-&gt;next = NULL;
+    }
+    Node(int data, Node* next)
+    {
+        this-&gt;data = data;
+        this-&gt;next = next;
+    }
+};
+*/
+
+Node *findMiddle(Node *head) {
+    // Write your code here
+    Node *fast = head;
+    Node *slow = head;
+
+    //incase if ll length is odd then fastN will reach to the last node
+    //incase if ll length is even then fatN will reach to the null of ll 
+    while(fast && fast-&gt;next)
+    {
+        fast = fast-&gt;next-&gt;next;
+        slow = slow-&gt;next;
+    }
+    return slow;
+}
         </code></pre>
         <!-- <img
           src="images/"

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ffffffff</title>
+    <title>Remove Nth Node from the end of the LinkedList</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css"
@@ -50,7 +50,7 @@
     <div class="header">
       <div class="header-content">
         <!-- <h1>Data Structure Algorithm</h1>-->
-        <h2>ffffff</h2>
+        <h2>Remove Nth Node from the end of the LinkedList</h2>
       </div>
     </div>
     <div class="container">
@@ -58,7 +58,32 @@
       <div class="codeC">
         <pre><code class="language-cpp line-numbers">
 // C++ solution code goes here
+Node* removeKthNode(Node* head, int k)
+{
+    // Write your code here.
 
+    int count = 0;
+    Node* fastN=head;
+    while(count &lt; k)
+    {
+        fastN = fastN-&gt;next;
+        count++;
+    }
+    if(fastN == nullptr)
+        return head-&gt;next;
+
+    Node* slowN = head;
+    while(fastN-&gt;next != nullptr)
+    {
+        fastN = fastN-&gt;next;
+        slowN = slowN-&gt;next;
+    }
+
+    
+    slowN-&gt;next = slowN-&gt;next-&gt;next;
+
+    return head;
+}
         </code></pre>
         <!-- <img
           src="images/"
@@ -72,7 +97,7 @@
       <h2>Java Solution</h2>
       <div class="codeC">
         <pre><code class="language-java line-numbers">
-// Java solution code goes here
+            // Java solution code goes here
         </code></pre>
       </div>
 
@@ -80,6 +105,34 @@
       <div class="codeC">
         <pre><code class="language-python line-numbers">
 # Python solution code goes here
+'''
+Following is the structure of the Node class already defined.
+'''
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        
+
+def removeKthNode(head, k):
+    # Write your code here.
+    cnt = 0
+    fastN = head
+    while cnt < k:
+        cnt +=1
+        fastN = fastN.next
+    
+    if fastN is None:
+        return head.next
+
+    slowN = head
+    while fastN.next is not None:
+        slowN = slowN.next
+        fastN = fastN.next
+    
+    slowN.next = slowN.next.next
+    return head
+
         </code></pre>
       </div>
     </div>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ffffffff</title>
+    <title>Find the length of the Loop in LinkedList</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css"
@@ -50,7 +50,7 @@
     <div class="header">
       <div class="header-content">
         <!-- <h1>Data Structure Algorithm</h1>-->
-        <h2>ffffff</h2>
+        <h2>Find the length of the Loop in LinkedList</h2>
       </div>
     </div>
     <div class="container">
@@ -80,6 +80,37 @@
       <div class="codeC">
         <pre><code class="language-python line-numbers">
 # Python solution code goes here
+class Node:
+    def __init__(self, data=0, next=None):
+        self.val = data
+        self.next = next
+
+
+# Please do not change code above.
+
+def findLength(slw, fst):
+    cnt = 1
+    while slw is not fst:
+        cnt += 1
+        slw = slw.next
+
+    return cnt
+
+def lengthOfLoop(head: Node) -> int:
+    # Write your code here
+    fast = head
+    slow = head
+    
+    while fast and fast.next:
+        fast = fast.next.next
+        slow = slow.next
+
+        if slow is fast:
+            return findLength(slow.next, fast)
+
+    return 0
+
+
         </code></pre>
       </div>
     </div>

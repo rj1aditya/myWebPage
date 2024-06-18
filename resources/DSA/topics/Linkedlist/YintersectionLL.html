@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ffffffff</title>
+    <title>Y intersection linkedlist</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css"
@@ -50,7 +50,7 @@
     <div class="header">
       <div class="header-content">
         <!-- <h1>Data Structure Algorithm</h1>-->
-        <h2>ffffff</h2>
+        <h2>Y intersection linkedlist</h2>
       </div>
     </div>
     <div class="container">
@@ -80,6 +80,39 @@
       <div class="codeC">
         <pre><code class="language-python line-numbers">
 # Python solution code goes here
+'''
+Following is the structure of the Node class already defined.
+'''
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+        
+
+def findIntersection(firstHead, secondHead):
+	# Write your code here.
+
+    if firstHead is None or secondHead is None:
+        return None
+
+    temp1 = firstHead
+    temp2 = secondHead
+
+    while temp1 is not temp2:
+        if temp1 is None:
+            temp1 = secondHead
+        else:
+            temp1 = temp1.next
+
+        if temp2 is None:
+            temp2 = firstHead
+        else:
+            temp2 = temp2.next
+    
+    return temp1
+    
+
         </code></pre>
       </div>
     </div>

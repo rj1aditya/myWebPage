@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ffffffff</title>
+    <title>Odd Even Linked List</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css"
@@ -50,7 +50,7 @@
     <div class="header">
       <div class="header-content">
         <!-- <h1>Data Structure Algorithm</h1>-->
-        <h2>ffffff</h2>
+        <h2>Odd Even Linked List</h2>
       </div>
     </div>
     <div class="container">
@@ -72,14 +72,38 @@
       <h2>Java Solution</h2>
       <div class="codeC">
         <pre><code class="language-java line-numbers">
-// Java solution code goes here
+            // Java solution code goes here
         </code></pre>
       </div>
 
       <h2>Python Solution</h2>
       <div class="codeC">
         <pre><code class="language-python line-numbers">
-# Python solution code goes here
+        # Python solution code goes here
+        from typing import Optional
+
+        class Node:
+            def __init__(self, value: int):
+                self.value = value
+                self.next = None
+        
+        def oddEvenList(head: Optional[Node]) -&gt; Optional[Node]:
+            # Write your code here.
+            if head is None or head.next is None:
+                return head
+            
+            oddN = head
+            evenN = head.next
+            backUp = head.next
+            while(evenN is not None and evenN.next is not None):
+                oddN.next = oddN.next.next
+                evenN.next = evenN.next.next
+        
+                oddN = oddN.next
+                evenN = evenN.next
+            
+            oddN.next = backUp
+            return head
         </code></pre>
       </div>
     </div>

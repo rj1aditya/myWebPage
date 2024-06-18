@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ffffffff</title>
+    <title>Reverse Nodes in K Group Size of LinkedList</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css"
@@ -50,7 +50,7 @@
     <div class="header">
       <div class="header-content">
         <!-- <h1>Data Structure Algorithm</h1>-->
-        <h2>ffffff</h2>
+        <h2>Reverse Nodes in K Group Size of LinkedList</h2>
       </div>
     </div>
     <div class="container">
@@ -58,7 +58,57 @@
       <div class="codeC">
         <pre><code class="language-cpp line-numbers">
 // C++ solution code goes here
+Node* findKthNode(Node *head, int k)
+{
+    Node *cur = head;
 
+    while(cur && --k)
+        cur = cur-&gt;next;
+
+    return k==0?cur:nullptr;
+}
+
+Node* reverese(Node *head)
+{
+    if(!head || !head-&gt;next)
+        return head;
+
+    Node* newH = reverese(head-&gt;next);
+    Node* front = head-&gt;next;
+    front-&gt;next = head;
+    head-&gt;next = nullptr;
+
+    return newH;
+}
+Node* kReverse(Node* head, int k) {
+    // Write your code here.
+    Node *temp = head;
+    Node *prevNode = nullptr;
+    Node *nextNode = nullptr;
+    while(temp)
+    {
+        Node* kthNode = findKthNode(temp, k);
+        if(kthNode == nullptr)
+        {
+            //cout &lt;&lt;"kthnode is null";
+            if(prevNode)
+                prevNode-&gt;next = temp;
+            break;
+        }
+
+        nextNode = kthNode-&gt;next;
+        kthNode-&gt;next = nullptr;
+        
+        Node *newH = reverese(temp);
+        if(temp == head)
+            head = newH;
+        else
+            prevNode-&gt;next = newH;
+        prevNode = temp;
+        temp = nextNode;
+    }
+    return head;
+}
         </code></pre>
         <!-- <img
           src="images/"
