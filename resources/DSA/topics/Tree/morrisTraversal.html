@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>aaaaa</title>
+    <title>Morris Traversal</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css"
@@ -50,7 +50,7 @@
     <div class="header">
       <div class="header-content">
         <!-- <h1>Data Structure Algorithm</h1>-->
-        <h2>aaaaa</h2>
+        <h2>fffff</h2>
       </div>
     </div>
     <div class="container">
@@ -58,7 +58,88 @@
       <div class="codeC">
         <pre><code class="language-cpp line-numbers">
 // C++ solution code goes here
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    vector&lt;int&gt; inorderTraversal(TreeNode* root) {
+        vector&lt;int&gt; in;
+        if(!root)
+            return in;
+        TreeNode* cur = root;
+        while(cur)
+        {
+            if(cur-&gt;left == nullptr)
+            {
+                in.push_back(cur-&gt;val);
+                cur = cur-&gt;right;
+            }
+            else
+            {
+                TreeNode* prev = cur-&gt;left;
 
+                while(prev-&gt;right && prev-&gt;right != cur)
+                    prev = prev-&gt;right;
+
+                if(prev-&gt;right == nullptr)
+                {
+                    prev-&gt;right = cur;
+                    cur = cur-&gt;left;
+                }
+                else
+                {
+                    prev-&gt;right = nullptr;
+                    in.push_back(cur-&gt;val);
+                    cur = cur-&gt;right;
+                }
+            }
+        }
+        return in;
+    }
+    vector&lt;int&gt; preorderTraversal(TreeNode* root) {
+
+        vector&lt;int&gt; pre;
+        TreeNode* cur = root;
+
+        while(cur)
+        {
+            if(cur-&gt;left == nullptr)
+            {
+                pre.push_back(cur-&gt;val);
+                cur = cur-&gt;right;
+            }
+            else
+            {
+                TreeNode* prev = cur-&gt;left;
+                while(prev-&gt;right && prev-&gt;right != cur)
+                    prev = prev-&gt;right;
+                
+                if(prev-&gt;right == nullptr)
+                {
+                    prev-&gt;right = cur;
+                    pre.push_back(cur-&gt;val);
+                    cur = cur-&gt;left;
+                }
+                else
+                {
+                    prev-&gt;right = nullptr;
+                    cur = cur-&gt;right;
+                }
+            }
+        }
+        return pre;
+        
+    }
+};
         </code></pre>
         <!-- <img
           src="images/"

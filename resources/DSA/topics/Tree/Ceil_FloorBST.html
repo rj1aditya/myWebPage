@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>aaaaa</title>
+    <title>Ceil & Floor value of BST</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css"
@@ -50,7 +50,7 @@
     <div class="header">
       <div class="header-content">
         <!-- <h1>Data Structure Algorithm</h1>-->
-        <h2>aaaaa</h2>
+        <h2>Ceil & Floor value of BST</h2>
       </div>
     </div>
     <div class="container">
@@ -58,6 +58,57 @@
       <div class="codeC">
         <pre><code class="language-cpp line-numbers">
 // C++ solution code goes here
+class Solution{
+
+    public:
+    int floor(Node* root, int x) {
+        // Code here
+        int floor = -1;
+        if(root==nullptr)
+            return floor;
+            
+        Node* cur = root;
+        
+        while(cur)
+        {
+            if(x == cur-&gt;data)
+                return x;
+            if(x &gt; cur-&gt;data)
+            {
+                floor = cur-&gt;data;
+                cur = cur-&gt;right;
+            }
+            else
+                cur = cur-&gt;left;
+        }
+        return floor;
+    }
+
+    int findCeil(Node* root, int input) {
+        int ceil = -1;
+        if (root == NULL) return ceil;
+
+        Node* tmp = root;
+
+        while(tmp)
+        {
+            if(tmp-&gt;data == input)
+                return input;
+            if(input &gt; tmp-&gt;data)
+            {
+                tmp = tmp-&gt;right;
+            }
+            else
+            {
+                ceil = tmp-&gt;data;
+                tmp = tmp-&gt;left;
+            }
+
+        }
+        return ceil;
+        // Your code here
+    }
+};
 
         </code></pre>
         <!-- <img
