@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      https://leetcode.com/problems/critical-connections-in-a-network/description/
+    </title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0; /* Light gray background color */
+      }
+
+      .header {
+        background-color: #85144b;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: #fff; /* White background color for container */
+        padding: 20px;
+        border-radius: 5px; /* Rounded corners */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Drop shadow */
+      }
+
+      pre {
+        background-color: #f9f9f9; /* Light gray background color for code blocks */
+        padding: 10px; /* Add padding to create space around the code */
+        border-radius: 5px; /* Rounded corners for code blocks */
+        overflow-x: auto; /* Enable horizontal scrolling if needed */
+        margin: 0; /* Remove any default margins */
+      }
+
+      code {
+        font-family: Consolas, Monaco, "Andale Mono", monospace;
+        padding: 0; /* Remove any default padding */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-content">
+        <!-- <h1>Data Structure Algorithm</h1>-->
+        <h2>
+          https://leetcode.com/problems/critical-connections-in-a-network/description/
+        </h2>
+      </div>
+    </div>
+    <div class="container">
+      <h2>C++ Solution</h2>
+      <div class="codeC">
+        <pre><code class="language-cpp line-numbers">
+// C++ solution code goes here
+class Solution {
+    int timer{1};
+    void dfs(int node, int parent, vector&lt;int&gt; &vis, vector&lt;int&gt; adj[], int tin[], int low[], 
+                vector&lt;vector&lt;int&gt;&gt; &bridges)
+    {
+        vis[node] = 1;
+        tin[node] = low[node] = timer;
+        timer++;
+        for(auto it: adj[node])
+        {
+            if(it == parent) continue;
+
+            if(!vis[it])
+            {
+                dfs(it, node, vis, adj, tin, low, bridges);
+                low[node] = min(low[node], low[it]);
+                if(low[it] &gt; tin[node])
+                    bridges.push_back({it, node});
+            }
+            else
+            {
+                low[node] = min(low[node], low[it]);
+            }
+        }
+    }
+public:
+    vector&lt;vector&lt;int&gt;&gt; criticalConnections(int n, vector&lt;vector&lt;int&gt;&gt;& connections) {
+        vector&lt;int&gt; adj[n];
+        for(auto it: connections)
+        {
+            adj[it[0]].push_back(it[1]);
+            adj[it[1]].push_back(it[0]);
+        }
+
+        vector&lt;int&gt; vis(n, 0);
+        int tin[n];
+        int low[n];
+        vector&lt;vector&lt;int&gt;&gt; bridges;
+
+        dfs(0, -1, vis, adj, tin, low, bridges);
+        return bridges;
+    }
+};
+        </code></pre>
+        <img
+          src="images/img10.png"
+          alt="tarzan algo"
+          width="700"
+          height="450"
+          style="display: block; margin: 0 auto"
+        />
+      </div>
+
+      <h2>Java Solution</h2>
+      <div class="codeC">
+        <pre><code class="language-java line-numbers">
+            // Java solution code goes here
+        </code></pre>
+      </div>
+
+      <h2>Python Solution</h2>
+      <div class="codeC">
+        <pre><code class="language-python line-numbers">
+        # Python solution code goes here
+        </code></pre>
+      </div>
+    </div>
+  </body>
+</html>

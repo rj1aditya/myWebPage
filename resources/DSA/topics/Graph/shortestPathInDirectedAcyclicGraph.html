@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shortest Path in Directed Acyclic Graph</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css"
+    />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0; /* Light gray background color */
+      }
+
+      .header {
+        background-color: #85144b;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        background-color: #fff; /* White background color for container */
+        padding: 20px;
+        border-radius: 5px; /* Rounded corners */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Drop shadow */
+      }
+
+      pre {
+        background-color: #f9f9f9; /* Light gray background color for code blocks */
+        padding: 10px; /* Add padding to create space around the code */
+        border-radius: 5px; /* Rounded corners for code blocks */
+        overflow-x: auto; /* Enable horizontal scrolling if needed */
+        margin: 0; /* Remove any default margins */
+      }
+
+      code {
+        font-family: Consolas, Monaco, "Andale Mono", monospace;
+        padding: 0; /* Remove any default padding */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-content">
+        <!-- <h1>Data Structure Algorithm</h1>-->
+        <h2>Shortest Path in Directed Acyclic Graph</h2>
+      </div>
+    </div>
+    <div class="container">
+      <h2>C++ Solution</h2>
+      <div class="codeC">
+        <pre><code class="language-cpp line-numbers">
+// C++ solution code goes here
+class Solution {
+    void dfs(int node, int vis[], vector&lt;pair&lt;int,int&gt;&gt; adj[], stack&lt;int&gt; &stk) {
+        vis[node] = 1;
+        for(auto it: adj[node]) {
+            if(vis[it.first] == 0) {
+                dfs(it.first, vis, adj, stk);
+            }
+        }
+        stk.push(node);
+    }
+    
+  public:
+    vector&lt;int&gt; shortestPath(int N, int M, vector&lt;vector&lt;int&gt;&gt;& edges) {
+        vector&lt;pair&lt;int,int&gt;&gt; adj[N];
+        stack&lt;int&gt; stk;
+        int vis[N] = {0};
+        
+        // Build adjacency list
+        for(auto it: edges) {
+            adj[it[0]].push_back({it[1], it[2]});
+        }
+        
+        // Perform DFS to get topological sort
+        for(int i = 0; i &lt; N; i++) {
+            if(vis[i] == 0) {
+                dfs(i, vis, adj, stk);
+            }
+        }
+        
+        // Initialize distances
+        vector&lt;int&gt; dist(N, INT_MAX);
+        dist[0] = 0;  // Assuming 0 is the source node
+        
+        // Process nodes in topological order
+        while(!stk.empty()) {
+            int node = stk.top();
+            stk.pop();
+            
+            if (dist[node] != INT_MAX) {
+                for(auto it: adj[node]) {
+                    int v = it.first;
+                    int w = it.second;
+                    if(dist[node] + w &lt; dist[v]) {
+                        dist[v] = dist[node] + w;
+                    }
+                }
+            }
+        }
+        
+        // Convert distances for non-reachable nodes to -1
+        for(int i = 0; i &lt; N; i++) {
+            if(dist[i] == INT_MAX) {
+                dist[i] = -1;
+            }
+        }
+        
+        return dist;
+    }
+};
+        </code></pre>
+        <!-- <img
+          src="images/"
+          alt="Longest Common Subsequence Image"
+          width="700"
+          height="450"
+          style="display: block; margin: 0 auto"
+        /> -->
+      </div>
+
+      <h2>Java Solution</h2>
+      <div class="codeC">
+        <pre><code class="language-java line-numbers">
+            // Java solution code goes here
+        </code></pre>
+      </div>
+
+      <h2>Python Solution</h2>
+      <div class="codeC">
+        <pre><code class="language-python line-numbers">
+        # Python solution code goes here
+        </code></pre>
+      </div>
+    </div>
+  </body>
+</html>
